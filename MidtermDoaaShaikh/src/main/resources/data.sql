@@ -1,0 +1,5 @@
+INSERT INTO item(name, price, descr, link, qty) VALUES 
+('Cinnamon Toast Crunch', '5.47', 'Delicious cinnamon toast crunch that I need to sustain me', 'https://www.walmart.ca/en/ip/cinnamon-toast-crunch-cereal-family-size/6000134323677', '2'),
+('Stegosaurus Dog Costume', '43.99', 'A cute stego costume for Kimchi for when he is tired of his penguin costume.', 'https://www.walmart.ca/en/ip/Costumes-for-all-Occasions-CC20105LG-Pet-Stegosaurus-Animal-Planet/PRD6IT1Y7JEGAKH', '1'),
+('Yupik Yoghurt Chips', '11.26', 'Tasty yoghurt chips to throw into granola', 'https://www.amazon.ca/Yupik-Yogurt-Chips-1Kg/dp/B00NAU55IO/ref=sr_1_1?dchild=1&keywords=yoghurt+chips&qid=1603386303&sr=8-1', '1'),
+('Eggplant', '3.37', 'A beautiful eggplant to turn into baba ghanouj at some point next week', 'https://www.walmart.ca/en/ip/eggplant/6000191270102', '1');

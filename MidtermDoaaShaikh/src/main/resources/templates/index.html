@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Doaa's Shopping List</title>
+</head>
+<body style="background-color: #e5eaea; color: #5f5058; font-family: Verdana, Geneva, sans-serif; font-weight: lighter">
+<CENTER>
+	<h1 style="background-image: linear-gradient(to bottom right, #a8d358, #54d8f3); font-size: 130px; border-radius: 25px;
+  padding: 5px; width: 750px; height: 300px; color: white">Shopping List</h1>
+  <br>
+	<table  border=1 frame=void rules=rows th:if="${getItems != null AND getItems != ''}">
+		<tr>
+		<th>Name</th>
+		<th>Price ($)</th>
+		<th>Description</th>
+		<th>Link</th>
+		<th>Quantity Needed</th>
+		<tr th:each="s: ${getItems}">
+			<td style="width: 200px; padding: 20px;" th:text="${s.name}"></td>
+			<td style="text-align: center; width: 200px; padding: 20px;" th:text="${s.price}"></td>
+			<td style="text-align: center; width: 200px; padding: 20px;" th:text="${s.descr}"></td>
+			<td style="text-align: center; width: 200px; padding: 20px;" th:text="${s.link}"></td>
+			<td style="text-align: center; width: 200px; padding: 20px;" th:text="${s.qty}"></td>
+			<td style="text-align: center; width: 200px; padding: 20px; font-style: oblique -12deg;"><a th:href="@{/editItemById/}+${s.id}">Edit</a></td>
+			<td style="text-align: center; width: 200px; padding: 20px; font-style: oblique -12deg;"><a th:href="@{/deleteItemById/}+${s.id}">Delete</a></td>
+		</tr>
+	</table>
+	</CENTER>
+	<br>
+	<br>
+	<br>
+	<form method="post" action="" th:action="@{/addItem}"
+		th:object="${item}">
+		<input type="hidden" name="id" th:field="*{id}" /> 
+		Name: <input type="text" name="name" th:field="*{name}" /><br><br>
+		Price: $<input type="text" name="price" th:field="*{price}" /><br><br>
+		Description <input style="width: 400px; height: 150px;" type="text" name="descr" th:field="*{descr}" /><br><br>
+		Link: <input style="width: 400px" type="text" name="link" th:field="*{link}" /><br><br>
+		Quantity Needed: <input type="number" name="qty" th:field="*{qty}" /><br><br>
+		<input style="background-image: linear-gradient(to bottom right, #a8d358, #54d8f3); border-radius: 25px;
+  padding: 5px; color:white; font-size:15px;" type="submit" value="Add item!" />
+	</form>
+
+</body>
+</html>
